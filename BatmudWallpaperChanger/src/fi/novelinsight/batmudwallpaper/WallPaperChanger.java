@@ -71,7 +71,7 @@ implements BatClientPluginTrigger, BatClientPluginCommandTrigger
 						else coordinates = coordinates + " " + tokens[i];
 					}
 					
-					String file = tokens[tokens.length-1];
+					String file = dir.toString() + File.separator + tokens[tokens.length-1];
 				
 					if(new File(file).canRead()) {	
 						coordPictures.put(coordinates, file);
