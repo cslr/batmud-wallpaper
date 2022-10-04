@@ -16,7 +16,7 @@ public class WallPaperChanger extends BatClientPlugin implements BatClientPlugin
 	
 	String previousCoordinates = "";
 	
-	final public File dir = new File("C:\\batmud-pictures\\");
+	final public File dir = new File("C:\\batmud-pictures\\"); // the pictures file directory..
 	
 	final public File [] files = dir.listFiles(new FilenameFilter() {
 		public boolean accept(File dir, String name) {
