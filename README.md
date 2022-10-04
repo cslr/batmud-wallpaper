@@ -10,22 +10,22 @@ Pictures (png and jpg) must be in directory: "System.getProterty("user.dir") / b
 
 It is also possible to create "pictures.txt" file containing coordinates of area and filename of a picture per each line which shows specific picture for that area. Example file is below. There is no support but report serious bugs to me.
 
-# Pictures file pictures.txt
-# Format:
-# <coordinates> <filename-picture-file>
-# <description> <filename-picture-file>
+ Pictures file pictures.txt
+ Format:
+ <coordinates> <filename-picture-file>
+ <description> <filename-picture-file>
 
-# Laenor 
+ Laenor 
 8557x, 8666y arelium.jpg
 8555x, 8664y arelium.jpg
 
-## bug: continent-wilderness backgrounds don't work for now
-## which is on the continent of Laenor laenor.jpg
+ bug: continent-wilderness backgrounds don't work for now
+ which is on the continent of Laenor laenor.jpg
 
-# Calythien
+ Calythien
 7266x, 9285y calythien.jpg
 
-## bug: continent-wilderness backgrounds don't work for now
-## which is on the continent of Desolathya desolathya.jpg
+ bug: continent-wilderness backgrounds don't work for now
+ which is on the continent of Desolathya desolathya.jpg
 
 
