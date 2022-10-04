@@ -13,8 +13,8 @@ It is also possible to create "pictures.txt" file containing coordinates of area
 ```
 # Pictures file pictures.txt
 # Format:
-# <coordinates> <filename-picture-file>
-# <description> <filename-picture-file>
+# <coordinates> <filename-picture-file-without-spaces>
+# <description> <filename-picture-file-without-spaces>
 
 # Laenor 
 8557x, 8666y arelium.jpg
