@@ -16,12 +16,15 @@ import java.util.*;
 public class WallPaperChanger extends BatClientPlugin 
 implements BatClientPluginTrigger, BatClientPluginCommandTrigger 
 {
+	// WINDOWS SPECIFIC PATHS: EDIT IF NEEDED (Linux) 
 	
 	final public File dir = new File("C:\\batmud-pictures\\"); // the pictures file directory..
 	
-	private File [] files = null;
-	
 	final public File confFile = new File("C:\\batmud-pictures\\pictures.txt");
+
+	
+	
+	private File [] files = null;
 	
 	private String location = "", coordinates = "";
 	
