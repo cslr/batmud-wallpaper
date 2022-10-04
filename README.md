@@ -33,4 +33,4 @@ It is also possible to create "pictures.txt" file containing coordinates of area
 BUGS:
 
 - wilderness backgrounds not supported
-- bat behaviour if batmud-pictures directory doesn't exist or if there are no background pictures.
+- bad handling of whereami if batmud-pictures directory doesn't exist or if there are no background pictures.
