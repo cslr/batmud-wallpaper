@@ -16,12 +16,16 @@ import java.util.*;
 public class WallPaperChanger extends BatClientPlugin 
 implements BatClientPluginTrigger, BatClientPluginCommandTrigger 
 {
-	// WINDOWS SPECIFIC PATHS: EDIT IF NEEDED (Linux) 
+	// the pictures file directory..
+	final public File dir = 
+			new File(System.getProperty("user.dir") + File.separator + "batmud-pictures" + File.separator);
 	
-	final public File dir = new File("C:\\batmud-pictures\\"); // the pictures file directory..
-	
-	final public File confFile = new File("C:\\batmud-pictures\\pictures.txt");
+	final public File confFile = 
+			new File(System.getProperty("user.dir") + File.separator + "batmud-pictures" + File.separator + "pictures.txt");
 
+	//final public File dir = new File("C:\\batmud-pictures\\"); // the pictures file directory..
+	
+	//final public File confFile = new File("C:\\batmud-pictures\\pictures.txt");
 	
 	
 	private File [] files = null;
@@ -43,6 +47,11 @@ implements BatClientPluginTrigger, BatClientPluginCommandTrigger
 	
 	public void loadPlugin() {
 		this.getClientGUI().printText("generic", "Loading NI WallpaperChangerPlugin...\n");
+		
+		if(dir.exists() == false) {
+			this.getClientGUI().printText("generic", "Put batmud-pictures dir in: " + System.getProperty("user.dir") + "\n");
+			this.getClientGUI().printText("generic", "Configuration file is: " + this.confFile.toString() + "\n");
+		}
 		
 		// loads picture specifications
 		try {
@@ -98,6 +107,7 @@ implements BatClientPluginTrigger, BatClientPluginCommandTrigger
 			arg0.getStrippedText().contains("Obvious exit is:") || 
 			arg0.getStrippedText().contains("Loc:    Arelium") // Arelium maphack
 			/*arg0.getStrippedText().contains("Exits: ")*/) {
+			
 			this.getClientGUI().doCommand("whereami");
 		}
 		
@@ -115,6 +125,8 @@ implements BatClientPluginTrigger, BatClientPluginCommandTrigger
 		
 		
 		if(matcher.find()) {
+			
+			
 			if(matcher.groupCount() == 3) {
 				location = matcher.group(1);
 				coordinates = matcher.group(3);
