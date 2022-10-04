@@ -7,6 +7,6 @@ Because this plugin overrides use of whereami command to get coordinates, you ca
 
 TODO
 
-Location specific txt-file showing a specified picture to be shown in certain locations.
+Location specific txt-file showing a specified picture certain locations.
 
 tomas.ukkonen@iki.fi, 2022
