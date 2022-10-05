@@ -157,7 +157,7 @@ implements BatClientPluginTrigger, BatClientPluginCommandTrigger
 					
 					String filename = files[r.nextInt(files.length)].toString(); // random
 					
-					this.getClientGUI().printText("generic", "W: " + Boolean.toString(wilderness) + " " + Boolean.toString(oldWilderness) + "\n");
+					// this.getClientGUI().printText("generic", "W: " + Boolean.toString(wilderness) + " " + Boolean.toString(oldWilderness) + "\n");
 					
 					if(wilderness == oldWilderness) {
 						if(latestFilename != null) filename = latestFilename;
