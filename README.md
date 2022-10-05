@@ -10,7 +10,7 @@ Because this plugin overrides use of whereami command to get coordinates, you ca
 
 Pictures (png and jpg) must be in directory: "System.getProterty("user.dir") / batmud-pictures/". The location is told when the plugin loads if the directory doesn't exist.
 
-It is also possible to create "pictures.txt" file containing coordinates of area and filename of a picture per each line which shows specific picture for that area. Example file is below. **There is no support but report serious bugs to me.**
+It is also possible to create "pictures.txt" file containing coordinates of area and filename of a picture per each line which shows specific picture for that area. Example file is below. 
 
 ```
 # Pictures file pictures.txt
@@ -36,3 +36,5 @@ BUGS:
 
 - wilderness backgrounds not supported
 - bad handling of whereami if batmud-pictures directory doesn't exist or if there are no background pictures.
+
+**There is no support but report serious bugs to me.**
