@@ -22,19 +22,18 @@ It is also possible to create "pictures.txt" file containing coordinates of area
 8557x, 8666y arelium.jpg
 8555x, 8664y arelium.jpg
 
-## bug: continent-wilderness backgrounds don't work for now
+# continent-wilderness backgrounds are ok now
 # which is on the continent of Laenor laenor.jpg
 
 # Calythien
 7266x, 9285y calythien.jpg
 
-## bug: continent-wilderness backgrounds don't work for now
+# continent-wilderness backgrounds are ok now
 # which is on the continent of Desolathya desolathya.jpg
 ```
 
 BUGS:
 
-- wilderness backgrounds not supported
 - bad handling of whereami if batmud-pictures directory doesn't exist or if there are no background pictures.
 
 **There is no support but report serious bugs to me.**
