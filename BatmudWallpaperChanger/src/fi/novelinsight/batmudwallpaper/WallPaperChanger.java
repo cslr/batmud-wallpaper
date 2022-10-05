@@ -35,6 +35,9 @@ implements BatClientPluginTrigger, BatClientPluginCommandTrigger
 	private String previousCoordinates = "";
 	//private String previousLocation = "";
 	
+	private boolean oldWilderness = false; 
+	private String latestFilename = null;
+	
 	private Map<String, String> coordPictures = new LinkedHashMap<>(); 
 	
 	private java.util.Random r = new java.util.Random();
@@ -105,8 +108,8 @@ implements BatClientPluginTrigger, BatClientPluginCommandTrigger
 	
 		if(arg0.getStrippedText().contains("Obvious exits are:") || 
 			arg0.getStrippedText().contains("Obvious exit is:") || 
-			arg0.getStrippedText().contains("Loc:    Arelium") // Arelium maphack
-			/*arg0.getStrippedText().contains("Exits: ")*/) {
+			arg0.getStrippedText().contains("Loc:    Arelium") ||  // Arelium maphack
+			arg0.getStrippedText().contains("Exits: ")) {
 			
 			this.getClientGUI().doCommand("whereami");
 		}
@@ -131,6 +134,15 @@ implements BatClientPluginTrigger, BatClientPluginCommandTrigger
 				location = matcher.group(1);
 				coordinates = matcher.group(3);
 				
+				boolean wilderness;
+				
+				if(location.contains("which is on the continent of ")) {
+					wilderness = true;
+				}
+				else {
+					wilderness = false;
+				}
+				
 				// Format: GLOBAL COORDINATES ARE: 7224x, 9062y
 				// this.getClientGUI().printText("generic", "LOCATION IS: '" + location + "'\n");
 				// this.getClientGUI().printText("generic", "GLOBAL COORDINATES ARE: " + coordinates + "\n");
@@ -138,12 +150,18 @@ implements BatClientPluginTrigger, BatClientPluginCommandTrigger
 				// now sets wallpaper randomly/not location dependent
 				
 				if(files.length > 0 && 
-					coordinates.equalsIgnoreCase(previousCoordinates) == false /*&& 
-					location.equalsIgnoreCase(previousLocation) == false*/) {
+					(coordinates.equalsIgnoreCase(previousCoordinates) == false || 
+					wilderness != oldWilderness)) {
 					
 					// change background image everytime global coordinates/area change..
 					
 					String filename = files[r.nextInt(files.length)].toString(); // random
+					
+					this.getClientGUI().printText("generic", "W: " + Boolean.toString(wilderness) + " " + Boolean.toString(oldWilderness) + "\n");
+					
+					if(wilderness == oldWilderness) {
+						if(latestFilename != null) filename = latestFilename;
+					}
 					
 					for (Map.Entry<String, String> entry : coordPictures.entrySet()) {
 						
@@ -161,10 +179,12 @@ implements BatClientPluginTrigger, BatClientPluginCommandTrigger
 					
 					//this.getClientGUI().printText("generic", filename + "\n");
 					this.getClientGUI().setWallpaper(filename);
+					latestFilename = filename;
 				}
 				
 				previousCoordinates = coordinates;
 				//previousLocation = location;
+				oldWilderness = wilderness;
 			}
 			
 			// removes 'whereami' return string from the input
