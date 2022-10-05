@@ -23,13 +23,13 @@ It is also possible to create "pictures.txt" file containing coordinates of area
 8555x, 8664y arelium.jpg
 
 # continent-wilderness backgrounds are ok now
-# which is on the continent of Laenor laenor.jpg
+which is on the continent of Laenor laenor.jpg
 
 # Calythien
 7266x, 9285y calythien.jpg
 
 # continent-wilderness backgrounds are ok now
-# which is on the continent of Desolathya desolathya.jpg
+which is on the continent of Desolathya desolathya.jpg
 ```
 
 BUGS:
